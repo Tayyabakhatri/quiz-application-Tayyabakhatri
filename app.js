@@ -80,13 +80,20 @@ function showOptions() {
 
 }
 showOptions()
+var previousAnswers = [];
 function previousAns() {
     showOptions()
-    console.log(count - 2);
+    // console.log(count - 2);
+    if (previousAnswers[count - 2] !== undefined) {
+        console.log(previousAnswers[count - 2]);
+    } else {
+        console.log("No answer selected.");
+    }
     for (var i = 0; i < options.length; i++) {
 
         if (options[i].checked) {
-            // console.log(options[i].value)
+           previousAnswers[count]==options[i].value;
+           break
         }
     }
 }
