@@ -22,20 +22,28 @@ var quizQuestion = [
         option3: "Mars",
         option4: "Jupiter"
     }, {
-        question: "Which planet in the solar system is known as the “Red Planet”?",
+        question: "Which country hosted the 2024 FIFA U-20 Women's World Cup?",
 
-        option1: "Venus",
-        option2: "Earth",
-        option3: "Mars",
-        option4: "Jupiter"
+        option1: "India",
+        option2: "Nigeria",
+        option3: "Colombia",
+        option4: "Japan"
     },
     {
-        question: "Which planet in the solar system is known as the “Red Planet”?",
+        question: "What significant new feature did Apple announce in their June 2024 WWDC?",
 
-        option1: "Venus",
-        option2: "Earth",
-        option3: "Mars",
-        option4: "Jupiter"
+        option1: "Mixed Reality headset",
+        option2: "Quantum computing chip",
+        option3: "Mind-controlled interface",
+        option4: "Apple Car prototype"
+    },
+    {
+        question: "What is the chemical symbol for Gold?",
+
+        option1: "Gd",
+        option2: "Au",
+        option3: "Ag",
+        option4: "Go"
     }
 ]
 var count = 0
@@ -46,15 +54,18 @@ function showOptions() {
     btn.disabled = true
     var questionDiv = document.getElementById("question-div")
     questionDiv.innerHTML = `<p>${quizQuestion[count].question}</p>
-    <lable>
+    <label>
     <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option1}
-    </lable>
-    <lable>
+    </label>
+    <label>
     <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option2}
-    </lable>
-    <lable>
+    </label>
+    <label>
     <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option3}
-    </lable>`
+    </label>
+    <label>
+    <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option4}
+    </label>`
     count++;
     for (var i = 0; i < options.length; i++) {
 
