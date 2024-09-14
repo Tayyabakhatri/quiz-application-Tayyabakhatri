@@ -58,13 +58,13 @@ function showOptions() {
     <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option1}
     </label>
     <label>
-    <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option2}
+    <input type="radio" name ="option" value="${quizQuestion[count].option2}">${quizQuestion[count].option2}
     </label>
     <label>
-    <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option3}
+    <input type="radio" name ="option" value="${quizQuestion[count].option3}">${quizQuestion[count].option3}
     </label>
     <label>
-    <input type="radio" name ="option" value="${quizQuestion[count].option1}">${quizQuestion[count].option4}
+    <input type="radio" name ="option" value="${quizQuestion[count].option4}">${quizQuestion[count].option4}
     </label>`
     count++;
     for (var i = 0; i < options.length; i++) {
@@ -80,21 +80,28 @@ function showOptions() {
 
 }
 showOptions()
-// var previousAnswers = [];
-// function previousAns() {
-//     showOptions()
-//     // console.log(count - 2);
-//     if (previousAnswers[count - 2] !== undefined) {
-//         console.log(previousAnswers[count - 2]);
-//     } else {
-//         console.log("No answer selected.");
-//     }
-//     for (var i = 0; i < options.length; i++) {
+var previousAnswer = null;
+btn.addEventListener("click", () => {
+    var selectedAnswer = null; // Use consistent variable names
+    var options = document.getElementsByName('answer'); // Get the options (radio buttons)
 
-//         if (options[i].checked) {
-//            previousAnswers[count]==options[i].value;
-//            break
-//         }
-//     }
-// }
+    // Loop through all options
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].checked) { // Check if the current option is selected
+            selectedAnswer = options[i].value;
+            break; // Once found, no need to continue the loop
+        }
+    }
 
+    // Log previous answer
+    if (previousAnswer !== null) {
+        console.log('Previous answer:', previousAnswer);
+    } else {
+        console.log('No previous answer selected.');
+    }
+
+    // Update previous answer if a new one is selected
+    if (selectedAnswer !== null) {
+        previousAnswer = selectedAnswer;
+    }
+});
