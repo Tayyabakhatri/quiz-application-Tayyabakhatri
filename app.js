@@ -6,7 +6,7 @@ var quizQuestion = [
         option2: 1917,
         option3: 1914,
         option4: 1920,
-        correct: 1923
+        correct: 1917
     },
     {
         question: " What is the largest lake in the world?",
@@ -15,7 +15,7 @@ var quizQuestion = [
         option2: "Baikal",
         option3: "Lake Superior",
         option4: "Ontari",
-        correct: "Baikal"
+        correct: "Caspian Sea"
     }, {
         question: "Which planet in the solar system is known as the “Red Planet”?",
 
@@ -40,7 +40,7 @@ var quizQuestion = [
         option2: "Quantum computing chip",
         option3: "Mind-controlled interface",
         option4: "Apple Car prototype",
-        correct: "Quantum computing chip"
+        correct: "Apple Car prototype"
     },
     {
         question: "What is the chemical symbol for Gold?",
@@ -63,15 +63,16 @@ var playAgain = document.getElementById("playAgain")
 nextBtn.addEventListener('click', function () {
     showOptions()
     previousBtn.disabled = false
+    
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
-            if (options[i].value == quizQuestion[count].correct) {
+            if (options[i].value === quizQuestion[count].correct) {
                 score++
             }
         }
-        
     }
 })
+
 
 
 
@@ -112,6 +113,7 @@ function showOptions() {
             })
         }
     }
+
 
 
 }
