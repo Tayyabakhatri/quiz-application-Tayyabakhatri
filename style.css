@@ -1,0 +1,19 @@
+body{
+    background-image: url(images/pexels-pixabay-220118.jpg);
+    background-repeat: no-repeat;
+}
+
+#btn, #previousBtn,#playAgain{
+    background-color: #d687d2;
+    border: none;
+    border-radius: 5px;
+
+}
+#inner-div{
+    background-color: rgba(127, 255, 212, 0.411);
+    border-radius: 10px;
+}
+.text{
+    color:#f0c82d;
+    
+}
