@@ -1,6 +1,10 @@
 body{
     background-image: url(images/pexels-pixabay-220118.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+   
 }
 
 #btn, #previousBtn,#playAgain{
@@ -10,10 +14,12 @@ body{
 
 }
 #inner-div{
-    background-color: rgba(127, 255, 212, 0.411);
+    background-color: rgba(127, 255, 212, 0.582);
     border-radius: 10px;
 }
 .text{
-    color:#f0c82d;
+    font-weight: bold;
+    color:#f0c92d;
+    font-size: 20px;
     
 }
