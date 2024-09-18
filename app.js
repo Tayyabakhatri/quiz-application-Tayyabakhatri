@@ -2,19 +2,19 @@ var quizQuestion = [
     {
         question: "In what year did the Great October Socialist Revolution take place?",
 
-        option1 : 1923,
-        option2 :1917,
-        option3 : 1914,
-        option4 : 1920,
-         correct: 1917
+        option1: 1923,
+        option2: 1917,
+        option3: 1914,
+        option4: 1920,
+        correct: 1917
     },
     {
         question: " What is the largest lake in the world?",
 
-       option1 : "Caspian Sea",
-        option2 : "Baikal",
-        option3 : "Lake Superior",
-        option4 : "Ontari",
+        option1: "Caspian Sea",
+        option2: "Baikal",
+        option3: "Lake Superior",
+        option4: "Ontari",
         correct: "Caspian Sea"
     },
     {
@@ -51,6 +51,14 @@ var quizQuestion = [
         option3: "Ag",
         option4: "Go",
         correct: "Au"
+    },
+    {
+        question:"What is the color of blood when it's inside your body?",
+        option1: "Red",
+        option2: "Blue",
+        option3: "Green",
+        option4: "yellow",
+        correct: "Red"
     }
 ]
 var score = 0
@@ -72,15 +80,9 @@ nextBtn.addEventListener('click', function () {
         }
     }
 })
-
-
-
-
-
-
 function showOptions() {
     if (!quizQuestion[count]) {
-        
+
         questionDiv.innerHTML = `Quiz completed ${score}`
         nextBtn.style.display = "none"
         previousBtn.style.display = "none"
@@ -111,13 +113,8 @@ function showOptions() {
             })
         }
     }
-
-
-
 }
 showOptions()
-
-
 previousBtn.addEventListener('click', function () {
     console.log(count)
     count--
@@ -134,5 +131,16 @@ playAgain.addEventListener('click', function () {
     previousBtn.style.display = "block"
 
 })
+
+
+
+
+
+
+
+
+
+
+
 
 
