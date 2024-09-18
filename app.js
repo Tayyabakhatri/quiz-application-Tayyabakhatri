@@ -2,21 +2,22 @@ var quizQuestion = [
     {
         question: "In what year did the Great October Socialist Revolution take place?",
 
-        option1: 1923,
-        option2: 1917,
-        option3: 1914,
-        option4: 1920,
-        correct: 1917
+        option1 : 1923,
+        option2 :1917,
+        option3 : 1914,
+        option4 : 1920,
+         correct: 1917
     },
     {
         question: " What is the largest lake in the world?",
 
-        option1: "Caspian Sea",
-        option2: "Baikal",
-        option3: "Lake Superior",
-        option4: "Ontari",
+       option1 : "Caspian Sea",
+        option2 : "Baikal",
+        option3 : "Lake Superior",
+        option4 : "Ontari",
         correct: "Caspian Sea"
-    }, {
+    },
+    {
         question: "Which planet in the solar system is known as the “Red Planet”?",
 
         option1: "Venus",
@@ -63,7 +64,7 @@ var playAgain = document.getElementById("playAgain")
 nextBtn.addEventListener('click', function () {
     showOptions()
     previousBtn.disabled = false
-    
+
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             if (options[i].value === quizQuestion[count].correct) {
@@ -85,22 +86,18 @@ function showOptions() {
         playAgain.style.display = "block"
     } else {
         btn.disabled = true
-        questionDiv.innerHTML = `<p class="text">${count+1+") "}${quizQuestion[count].question}</p>
-        <label class="text">
-        <input type="radio" name ="option"  value="${quizQuestion[count].option1}">${quizQuestion[count].option1}
-        </label>
-        <br>
-        <label  class="text">
-        <input type="radio" name ="option"  value="${quizQuestion[count].option2}">${quizQuestion[count].option2}
-        </label>
-         <br>
-        <label  class="text">
-        <input type="radio" name ="option"  value="${quizQuestion[count].option3}">${quizQuestion[count].option3}
-        </label>
-         <br>
-        <label  class="text">
-        <input type="radio" name ="option"  value="${quizQuestion[count].option4}">${quizQuestion[count].option4}
-        </label>`
+        questionDiv.innerHTML = `<p class"text">${count + 1 + ")"}${quizQuestion[count].question}</p>
+        `
+        var optionsHtml = '';
+        for (var key in quizQuestion[count]) {
+            if (key.startsWith("option")) {
+                optionsHtml +=
+                    `<label class="text">
+         <input type="radio" name ="option"  value="${quizQuestion[count][key]}">${quizQuestion[count][key]}
+        </label><br>`
+            }
+        }
+        questionDiv.innerHTML += optionsHtml;
         count++;
         for (var i = 0; i < options.length; i++) {
 
@@ -128,11 +125,11 @@ previousBtn.addEventListener('click', function () {
     }
     showOptions()
 })
-playAgain.addEventListener('click',function(){
-    count=0
-    playAgain.style.display="none"
+playAgain.addEventListener('click', function () {
+    count = 0
+    playAgain.style.display = "none"
     showOptions()
-     nextBtn.style.display = "block"
-        previousBtn.style.display = "block"
+    nextBtn.style.display = "block"
+    previousBtn.style.display = "block"
 
 })
