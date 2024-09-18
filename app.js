@@ -55,12 +55,11 @@ var quizQuestion = [
 ]
 var score = 0
 var count = 0
-var options = document.getElementsByName("option")
 var nextBtn = document.getElementById("btn")
-
 var previousBtn = document.getElementById("previousBtn")
 var questionDiv = document.getElementById("question-div")
 var playAgain = document.getElementById("playAgain")
+var options = document.getElementsByName("option")
 nextBtn.addEventListener('click', function () {
     showOptions()
     previousBtn.disabled = false
@@ -68,8 +67,8 @@ nextBtn.addEventListener('click', function () {
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             if (options[i].value === quizQuestion[count].correct) {
-                score++
             }
+            score++
         }
     }
 })
@@ -78,8 +77,10 @@ nextBtn.addEventListener('click', function () {
 
 
 
+
 function showOptions() {
     if (!quizQuestion[count]) {
+        
         questionDiv.innerHTML = `Quiz completed ${score}`
         nextBtn.style.display = "none"
         previousBtn.style.display = "none"
@@ -133,3 +134,5 @@ playAgain.addEventListener('click', function () {
     previousBtn.style.display = "block"
 
 })
+
+
