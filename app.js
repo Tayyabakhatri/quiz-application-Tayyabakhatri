@@ -53,7 +53,7 @@ var quizQuestion = [
         correct: "Au"
     },
     {
-        question:"What is the color of blood when it's inside your body?",
+        question: "What is the color of blood when it's inside your body?",
         option1: "Red",
         option2: "Blue",
         option3: "Green",
@@ -68,27 +68,79 @@ var previousBtn = document.getElementById("previousBtn")
 var questionDiv = document.getElementById("question-div")
 var playAgain = document.getElementById("playAgain")
 var options = document.getElementsByName("option")
-nextBtn.addEventListener('click', function () {
-    showOptions()
-    previousBtn.disabled = false
+// nextBtn.addEventListener('click', function () {
+//     showOptions()
+//     previousBtn.disabled = false
 
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].checked) {
-            if (options[i].value === quizQuestion[count].correct) {
-            }
-            score++
-        }
+//     for (var i = 0; i < options.length; i++) {
+//         if (options[i].checked) {
+//             if (options[i].value === quizQuestion[count].correct) {
+//             }
+//             score++
+//         }
+//     }
+// })
+// function showOptions() {
+//     if (!quizQuestion[count]) {
+
+//         questionDiv.innerHTML = `Quiz completed ${score}`
+//         nextBtn.style.display = "none"
+//         previousBtn.style.display = "none"
+//         playAgain.style.display = "block"
+//     } else {
+//         btn.disabled = true
+//         questionDiv.innerHTML = `<p class"text">${count + 1 + ")"}${quizQuestion[count].question}</p>
+//         `
+//         var optionsHtml = '';
+//         for (var key in quizQuestion[count]) {
+//             if (key.startsWith("option")) {
+//                 optionsHtml +=
+//                     `<label class="text">
+//          <input type="radio" name ="option"  value="${quizQuestion[count][key]}">${quizQuestion[count][key]}
+//         </label><br>`
+//             }
+//         }
+//         questionDiv.innerHTML += optionsHtml;
+//         count++;
+//         for (var i = 0; i < options.length; i++) {
+
+//             if (options[i].checked) {
+//                 console.log(options[i].value)
+//             }
+
+//             options[i].addEventListener("click", function () {
+//                 nextBtn.disabled = false
+//             })
+//         }
+//     }
+// }
+// showOptions()
+previousBtn.addEventListener('click', function () {
+    console.log(count)
+    count--
+    if (count > 0) {
+        count--;
     }
+    showOptions()
+})
+playAgain.addEventListener('click', function () {
+    count = 0
+    playAgain.style.display = "none"
+    showOptions()
+    nextBtn.style.display = "block"
+    previousBtn.style.display = "block"
 })
 function showOptions() {
     if (!quizQuestion[count]) {
-
+        
+            previousBtn.disabled = false
         questionDiv.innerHTML = `Quiz completed ${score}`
         nextBtn.style.display = "none"
         previousBtn.style.display = "none"
         playAgain.style.display = "block"
-    } else {
-        btn.disabled = true
+    }
+    else {
+        nextBtn.disabled = true
         questionDiv.innerHTML = `<p class"text">${count + 1 + ")"}${quizQuestion[count].question}</p>
         `
         var optionsHtml = '';
@@ -107,40 +159,32 @@ function showOptions() {
             if (options[i].checked) {
                 console.log(options[i].value)
             }
-
             options[i].addEventListener("click", function () {
-                nextBtn.disabled = false
+                nextBtn.disabled = false 
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].checked) {
+                        if (options[i].value === quizQuestion[count].correct) {
+                        }
+                        score++
+                    }
+                }
+                // showOptions()
             })
         }
     }
 }
 showOptions()
-previousBtn.addEventListener('click', function () {
-    console.log(count)
-    count--
-    if (count > 0) {
-        count--;
-    }
-    showOptions()
-})
-playAgain.addEventListener('click', function () {
-    count = 0
-    playAgain.style.display = "none"
-    showOptions()
-    nextBtn.style.display = "block"
-    previousBtn.style.display = "block"
-
-})
 
 
 
+       
 
 
 
-
-
-
-
-
+                
+                
+        
+        
+        
 
 
