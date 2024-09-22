@@ -59,6 +59,14 @@ var quizQuestion = [
         option3: "Green",
         option4: "yellow",
         correct: "Red"
+    },
+    {
+        question: "Which is the fastest bird in the world?",
+        option1: "Raven",
+        option2: "Hummingbird",
+        option3: "Peregrine Falcon",
+        option4: "Bald Eagle",
+        correct: "Peregrine Falcon"
     }
 ]
 var score = 0
